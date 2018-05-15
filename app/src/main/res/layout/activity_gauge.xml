@@ -4,43 +4,43 @@
     xmlns:gauge="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/background_light"
     android:orientation="vertical">
 
-    <pl.pawelkleczkowski.customgauge.CustomGauge
-        android:id="@+id/gauge"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+    <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
+        android:id="@+id/circularProgress"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:padding="8dp"
-        app:gaugeDividerColor="@android:color/holo_blue_light"
-        app:gaugeDividerDrawFirst="false"
-        app:gaugeDividerDrawLast="true"
-        app:gaugeDividerSize="1"
-        app:gaugeDividerStep="10"
-        app:gaugeEndValue="100"
-        app:gaugePointEndColor="@android:color/darker_gray"
-        app:gaugePointStartColor="@android:color/darker_gray"
-        app:gaugeStartAngle="180"
-        app:gaugeStartValue="0"
-        app:gaugeStrokeCap="BUTT"
-        app:gaugeStrokeColor="@android:color/holo_red_dark"
-        app:gaugeStrokeWidth="15dp"
-        app:gaugeSweepAngle="180"
+        android:layout_marginTop="8dp"
+        app:drawDot="true"
+        app:dotColor="@color/colorAccent"
+        app:dotWidth="16dp"
+        app:textSize="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:background="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="@+id/circularProgress"
+        app:layout_constraintEnd_toEndOf="@id/circularProgress"
+        app:layout_constraintStart_toStartOf="@+id/circularProgress"
+        app:layout_constraintTop_toTopOf="@id/circularProgress"
+        app:layout_constraintVertical_bias="1.0" />
+
     <TextView
-        android:id="@+id/txtGauge"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtValue"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gauge" />
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/view"
+        app:layout_constraintStart_toStartOf="@id/view"
+        app:layout_constraintEnd_toEndOf="@id/view"/>
 
     <Button
         android:id="@+id/btn2"
